@@ -1,28 +1,34 @@
 import * as express from "express";
 import axios from "axios";
+import * as cors from "cors";
 
 const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+app.use(cors());
 
-app.post("/api/ssrf", async (req: any, res: any) => {
-  const { url } = req.body;
+app.get("/api/meme", async (req: any, res: any) => {
+  const { url } = req.query;
 
   if (!url) {
-    return res.status(400).send("URL is required");
+    return res.status(400).send("URL is required.");
   }
 
+  const randomKey = Math.random().toString(36).substring(2, 15);
+
   try {
-    // Make a request to the user-provided URL
-    const response = await axios.get(url);
-    return res.status(200).send(response.data);
+    const response = await axios.get(url, {
+      headers: { "X-Random-Key": randomKey },
+    });
+    const content = response.data;
+
+    res.json(content);
   } catch (error) {
-    return res.status(500).send("Error fetching the URL");
+    return res.status(500).send("Error fetching or processing URL.");
   }
 });
 
-// Start the Express server
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
