@@ -24,7 +24,7 @@ const MemeFetcher = () => {
   }, []);
 
   return (
-    <div className="max-w-md mx-auto my-10 p-5 border rounded-lg shadow-lg bg-white">
+    <div className="max-w-md mx-auto my-10 p-5 rounded-lg shadow-lg bg-white bg-opacity-30 backdrop-blur-md border border-white border-opacity-50">
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : meme ? (

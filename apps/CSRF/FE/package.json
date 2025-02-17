@@ -1,5 +1,5 @@
 {
-  "name": "fe_ssrf",
+  "name": "fe_csrf",
   "private": true,
   "version": "0.0.0",
   "type": "module",

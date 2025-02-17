@@ -1,5 +1,5 @@
 {
-  "name": "be-ssrf",
+  "name": "be_csrf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,11 +14,13 @@
   "dependencies": {
     "axios": "^1.7.9",
     "cors": "^2.8.5",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "cookie-parser": "^1.4.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
+    "@types/cookie-parser": "^1.4.6",
     "@types/node": "^22.13.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"

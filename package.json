@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev:csrf": "turbo dev --filter=./apps/CSRF/*",
+    "dev:ssrf": "turbo dev --filter=./apps/SSRF/*",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
